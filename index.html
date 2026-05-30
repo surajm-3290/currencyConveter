@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h3>Currency Conveter</h3>
+            <div>
+                <div id="theme">Light</div>
+                <p id="language">Eng</p>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>
+            Currency Conveter
+        </h1>
+        <p>Convert Currencies in real time with the latest exchange rates</p>
+        <div id="OuterFormContainer">
+            <form>
+                <div class="fullcontainer">
+                    <div class="fromToContainer">
+                        <h3>From:</h3>
+                        <div class="selectContainer">
+                            <div id="fromFlagImg">Flag</div>
+                            <select>
+                                
+                            </select>
+                        </div>
+                        <input type="number" class="inputstyle" id="fromInput" required>
+                    </div>
+
+                    <div class="middleExchangeSym"></div>
+
+                    <div class="fromToContainer">
+                        <h3>To:</h3>
+                        <div id="fromFlagImg">Flag</div>
+                        <div class="selectContainer">
+                            <div id="fromFlagImg"></div>
+                            <select>
+                                
+                            </select>
+                        </div>
+                        <input type="number" class="inputstyle" id="fromInput" readonly>
+                    </div>
+                </div>
+                <button id="convert">Convert</button>
+            </form>
+        </div>
+    </main>
+    <footer>&hearts; Made with HTML, CSS & JavaScri(by using APIs).</footer>
+    
+
+    <script src="codes.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
