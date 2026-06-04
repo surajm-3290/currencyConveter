@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav>
-            <h3>Currency Conveter</h3>
+            <h3>Currency Converter</h3>
             <div>
                 <div id="theme">Light</div>
                 <p id="language">Eng</p>
@@ -27,33 +27,80 @@
                     <div class="fromToContainer">
                         <h3>From:</h3>
                         <div class="selectContainer">
-                            <div id="fromFlagImg">Flag</div>
+                            <div class="FlagImg"></div>
                             <select id="selectFrom" required>
                                 <option value="select" disabled selected>Select Country</option>
                             </select>
                         </div>
-                        <input type="number" class="inputstyle" id="fromInput" required>
+                        <input type="number" class="inputstyle" id="fromInput" placeholder="Enter Amount" required>
                     </div>
-
-                    <div class="middleExchangeSym"></div>
+                    
+                    <hr>
 
                     <div class="fromToContainer">
                         <h3>To:</h3>
-                        <div id="fromFlagImg">Flag</div>
                         <div class="selectContainer">
-                            <div id="fromFlagImg"></div>
+                            <div class="FlagImg"></div>
                             <select  id="selectTo">
                                 <option value="select" disabled selected>Select County</option>
                             </select>
                         </div>
-                        <input type="number" class="inputstyle" id="toOutput" readonly>
+                        <input type="number" class="inputstyle" id="toOutput" placeholder='Press "Convert" Button To Display Amount' readonly>
                     </div>
                 </div>
-                <button id="convert">Convert</button>
+                <div class="rates">
+                    <div id="perrate">
+                        <label for="perrate">Exchage Rate</label>
+                        <p>1 <span class="fromvalue">USD</span> = <span class="exrate">95</span> <span id="tovalue">INR</span></p>
+                    
+                    </div>
+                    <button id="convert">Convert</button>
+                </div>
+                
             </form>
         </div>
+        <div class="belowElement">
+            <div class="elementBox">
+                <div class="elemnentImage">
+                    <img src="#" alt="Image is here">
+                </div>
+                <div>
+                    <h4>Exchange Rate</h4>
+                    <p>1 <span class="fromvalue">USD</span> = <span class="exrate">95</span> <span id="tovalue">INR</span></p>
+                </div>
+            </div>
+
+            <div class="elementBox">
+                <div class="elemnentImage">
+                    <img src="#" alt="Image is here">
+                </div>
+                <div>
+                    <h4>Last Updated</h4>
+                    <p id="lastUpated"></p>    
+                </div>
+            </div>
+            <div class="elementBox">
+                <div class="elemnentImage">
+                    <img src="#" alt="Image is here">
+                </div>
+                <div>
+                    <h4>Update Rate Source</h4>
+                    <p id="updatedDate">Frankfurter<br><span>Exchange rates and currency data API</span></p>    
+                </div>
+            </div>
+            <div class="elementBox">
+                <div class="elemnentImage">
+                    <img src="#" alt="Image is here">
+                </div>
+                <div>
+                    <h4>Update Interval</h4>
+                    <p id="UpdateInterval">Exactly 24 hours<br>16:00 CET(Central European Time)</p>    
+                </div>
+            </div>
+        </div>
+
     </main>
-    <footer>&hearts; Made with HTML, CSS & JavaScri(by using APIs).</footer>
+    <footer>&hearts; Made with HTML, CSS & JavaScript(by using APIs).</footer>
     
 
     <script src="/calculatorRoot/codes.js"></script>
