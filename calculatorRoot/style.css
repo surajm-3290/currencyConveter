@@ -3,12 +3,14 @@
     padding: 0%;
 }
 
+
 body{
     display: flex;
     flex-direction: column;
     background-color: #F5F6FC;
     justify-content: center;
     align-items: center;
+    font-family: "Inter", sans-serif;
     /* background-color: black; */
 }
 
@@ -32,38 +34,37 @@ header{
     color:white;
     width: 100%;
     padding: 10px;
-
+    display: flex;
+    align-items: center;
+    
 }
+
 
 nav{
     display: flex;
     flex-direction: row;
-    padding-inline: 10px;
+    padding-inline: 20px;
     justify-content: space-between;
     align-items: center;
     vertical-align: center;
+    width: 100%;
 }
+
 nav div{
     display: flex;
     flex-direction: row;
     gap: 50px;
+    align-items: center;
     padding-right: 40px;
 }
 
 
+
 #theme{
-    background-color: #F5F6FC;
-    color: #1A235A;
-    padding: 5px 10px;
-    border-radius: 5px;
     cursor: pointer;
 }
 
 #language{
-    background-color: #F5F6FC;
-    color: #1A235A;
-    padding: 5px 10px;
-    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -105,11 +106,13 @@ main p{
 }
 
 .selectContainer{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     margin: 10px 0;
     display: flex;
     align-items: center;
+    height:max-content;
+    
 }
 
 select{
@@ -122,10 +125,12 @@ select{
 .FlagImg{
     height: 100%;
     width: auto;
+    margin-right: 5px;
 }
 
 .UrlImg{
     height: 55px;
+    padding: 0%;
 }
 
 
@@ -136,6 +141,7 @@ input[type="number"]{
     width: 92% ;
     margin: 10px 0;
     align-items: center;
+    margin-left: 5px;
     
 }
 
@@ -154,11 +160,12 @@ input[type="number"]{
     border-radius: 5px;
     cursor: pointer;
     width: 95%;
-    margin: 20px;
+    margin: 0 0 0 20px;
+    font-size: large;
 }
 
 .belowElement{
-    border: 2px solid rgb(198, 81, 81);
+    /* border: 2px solid rgb(198, 81, 81); */
     /* display: flex;
     flex-direction: row; */
     display: grid;
@@ -167,12 +174,25 @@ input[type="number"]{
     justify-content: center;
     margin: 10px 20%;
     border-radius: 10px;
+    height: 80px;
 }
 
 .elementBox{
     border: 2px solid black;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
+    height: 80px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    font-size: medium;
+}
+
+.tenor-gif-embed{
+    height: 150px;
+    margin-bottom: 5px;
+    cursor: help;
+    
+    
 }
