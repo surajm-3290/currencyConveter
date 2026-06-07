@@ -9,8 +9,11 @@ const flagImageTO = document.querySelector("#FlagImgTO");
 const displayBeforeBtn = document.querySelector(".outputDisplay");
 const belowExRate = document.querySelector("#exRate");
 const perRate = document.querySelector("#perrate");
+const lastUpdated = document.querySelector("#lastUpdated");
 let toConvert = 1;
 const flagBaseUrl = "https://flagsapi.com";
+let fromCode;
+let toCode;
 
 
 for (let i in countryList) {
@@ -24,9 +27,6 @@ for (let i in countryList) {
 inputNum.addEventListener('input', () => {
     toConvert = inputNum.value;
 });
-
-let fromCode;
-let toCode;
 
 selectFrom.addEventListener("change", (evt) => {
     fromCode = evt.target.value;
@@ -61,7 +61,7 @@ async function rate(){
     perRate.removeChild(paraStatus);
     perRate.appendChild(paraOutput);
     outputNum.value = finalValue.toFixed(2);
-    lastUpdated.innerText = `Date: ${data.date}`;
+    
     paraOutput.textContent = `${toConvert} ${fromCode}  =  ${finalValue.toFixed(2)} ${toCode}`;
     belowExRate.innerText = `1 ${fromCode} = ${result.toFixed(3)} ${toCode}`;
     }
@@ -75,12 +75,16 @@ async function rate(){
 
 btn.addEventListener('click', (evt) => {
     evt.preventDefault();
-    toConvert = Number(toConvert);
-    if(perRate.childElementCount != 0){
-        perRate.replaceChildren();
+    if((toCode == undefined) || (fromCode == undefined)){
+        alert("Select Country Code!!");
+    }else{
+        toConvert = Number(toConvert);
+        if(perRate.childElementCount != 0){
+            perRate.replaceChildren();
+        }
+        perRate.appendChild(paraStatus);
+        rate();
     }
-    perRate.appendChild(paraStatus);
-    rate();
 });
 
 const theme = document.querySelector("#theme");
@@ -88,3 +92,13 @@ theme.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 })
 
+
+async function api() {
+    let URL = `https://api.frankfurter.dev/v2/rate/USD/INR`;
+    let response = await fetch(URL);
+    let data = await response.json();
+    lastUpdated.innerText = `Date: ${data.date}`;
+    belowExRate.innerText = `1 USD = ${data.rate.toFixed(2)} INR`;
+}
+
+api();
